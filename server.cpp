@@ -250,7 +250,7 @@ bool Server::SetupInterface(InterfaceInfo* interface) {
     // p2p interface from station interfaces.
     // Currently NAN interfaces also use station type.
     // We should blacklist NAN interfaces as well.
-    if (iface.name != "p2p0" &&
+    if (iface.name != "p2p0" && iface.name != "uap0" &&
         !android::base::StartsWith(iface.name, "aware_data")) {
       *interface = iface;
       return true;
